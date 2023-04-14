@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Full Stack .Net\\Graduation Project\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj": {}
+    "D:\\المشروع\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj": {}
   },
   "projects": {
-    "D:\\Full Stack .Net\\Graduation Project\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj": {
+    "D:\\المشروع\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Full Stack .Net\\Graduation Project\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj",
+        "projectUniqueName": "D:\\المشروع\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj",
         "projectName": "GraduationProjectAPI",
-        "projectPath": "D:\\Full Stack .Net\\Graduation Project\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj",
+        "projectPath": "D:\\المشروع\\GraduationProjectAPI\\GraduationProjectAPI\\GraduationProjectAPI.csproj",
         "packagesPath": "C:\\Users\\UNITED PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Full Stack .Net\\Graduation Project\\GraduationProjectAPI\\GraduationProjectAPI\\obj\\",
+        "outputPath": "D:\\المشروع\\GraduationProjectAPI\\GraduationProjectAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

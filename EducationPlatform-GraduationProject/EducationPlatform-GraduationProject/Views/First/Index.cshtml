@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EducationPlatform_GraduationProject.ViewModels.ContentVM>
+@*<div class="container">*@
+    
+       <input type="text" id="userInput" hidden />
+       <input type="text" id="userInputName" value="@User.Identity.Name" hidden />
+   
+
+    <div class="row ro p-1" >
+        <div class="col-md-2" id="addbtn">
+        <button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Live Chat</button>
+      
+        </div>
+        <div class="col-md-10  d-flex flex-column justify-content-center align-items-center">
+             @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="card text-dark border-primary my-2 mx-1 " style="max-width: 40rem; width: 40rem;">
+
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: right;"> العنوان : @item.Title </h5>
+                            <hr>
+                            <h6 class="card-text" style="text-align: right;">  تاريخ المحاضرة:@item.Date.ToString("dd/MM/yyyy hh:mm tt")  </h6>
+                        </div>
+                    <a href="~/First/Details/@item.Id" class="btn btn-primary"> عرض التفاصيل</a>
+                    </div>
+                
+                }
+            }
+             else
+            {
+                <div>
+                    <h4>لا توجد محاضرات حتي الان.</h4>
+                </div>
+            }
+        </div>
+         <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+                <button type="button" class="btn-close" id="closebtn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <partial name="~/Views/Chat/Index.cshtml" />
+            </div>
+        </div>
+       
+</div>
