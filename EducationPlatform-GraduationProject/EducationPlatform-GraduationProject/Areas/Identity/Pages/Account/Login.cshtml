@@ -12,7 +12,7 @@
             <h1>تسجيل الدخول</h1>
             <form id="account" method="post">
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
                 <label asp-for="Input.Email" class="label1">إسم المستخدم</label>
                 <div class="divCss">
                     <i class="fa-solid fa-user"></i>
@@ -23,20 +23,17 @@
                 <label asp-for="Input.Password" class="label2">كلمة المرور</label>
                 <div class="divCss">
                     <i class="fa-solid fa-lock"></i>
-                    <input asp-for="Input.Password" class=" inputCss" autocomplete="current-password" aria-required="true" placeholder="كلمة المرور" required />
+                    <input type="password" asp-for="Input.Password" class=" inputCss" autocomplete="current-password" aria-required="true" placeholder="كلمة المرور" required />
                     @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
                 </div>
                 <div>
+                        
                     <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="label2">
-
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @*@Html.DisplayNameFor(m => m.Input.RememberMe)*@تذكرني ؟
-
-
-                        </label>
+                        <label asp-for="Input.RememberMe" class="label2"><input class="form-check-input" asp-for="Input.RememberMe" style="margin-right:5px" /> تذكرني ؟ </label>
+                        
                     </div>
                 </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger" style="color:red !important"></div>
                 <div>
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary lgnBtn">تسجيل الدخول</button>
                 </div>

@@ -2,31 +2,48 @@ var btnAddImage = document.getElementById("BtnAddImage");
 var images = document.getElementById("Images");
 var counterImage = 0;
 
-function AddImages() {
-  counterImage++;
-  var input = document.createElement("input");
-  input.type = "text";
-    input.setAttribute("asp-for", "Images");
-    images.innerHTML += `<div>
-        <input asp-for="Images[${counterImage}]" class="form-control mt-2" style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الصورة   " />
-        <button id="imagebtn${counterImage}"  onclick="return this.parentNode.remove();" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;" > - </button>
-        <span asp-validation-for="Images[${counterImage}]" class="text-danger"></span>
-        </div>`;
-}
+function AddImages()
+{
+    counterImage++;
+    var container = document.createElement("div");
+    var input = document.createElement("input");
+    input.setAttribute("name", `Images[${counterImage}]`);
+    input.setAttribute("placeholder", "ادخل رابط الصورة");
+    input.classList.add("form-control", "mt-2");
+    input.style.float = "right";
+    input.style.width = "90%";
+    input.style.textAlign = "right";
+    //Button
+    var btn = document.createElement("span");
+    btn.setAttribute("onclick", "return this.parentNode.remove();");
+    btn.classList.add("btn", "btn-danger");
+    btn.style.float = "left";
+    btn.style.width = "8%";
+    btn.style.marginTop = "10px";
+    btn.textContent = "-";
+
+    //Validation
+    var ValidSpan = document.createElement("span");
+    ValidSpan.setAttribute("asp-validation-for", "Images");
+    ValidSpan.classList.add("text-danger");
 
 
-// function DeleteImageInput(){
-//     var parent =
-// }
+
+    container.appendChild(input);
+    container.appendChild(btn);
+    container.appendChild(ValidSpan);
+    images.appendChild(container);
+} 
 
 var btnAddVideos = document.getElementById("BtnAddVideo");
 var videos = document.getElementById("Videos");
 var counterVideo = 0;
 
-function AddVideo() {
+function AddVideo()
+{
   counterVideo++;
   videos.innerHTML += `<div>
-        <input asp-for="Videos[${counterVideo}]" class="form-control mt-2" style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الفيديو  "  />
+        <input name="Videos[${counterVideo}]" class="form-control mt-2" style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الفيديو  "  />
         <button id="imagebtn${counterImage}"  onclick="return this.parentNode.remove();" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;" > - </button>
         <span asp-validation-for="Videos[${counterVideo}]" class="text-danger"></span>
         </div>`;
@@ -36,10 +53,11 @@ var btnAddPdf = document.getElementById("BtnAddPDF");
 var PDFs = document.getElementById("PDFs");
 var counterPdf = 0;
 
-function AddPDF() {
+function AddPDF()
+{
   counterPdf++;
   PDFs.innerHTML += `<div>
-        <input asp-for="Pdfs[${counterPdf}]" class="form-control mt-2" style="float: right; width: 90%; text-align: right;"  placeholder="ادخل رابط الملف  " />
+        <input name="Pdfs[${counterPdf}]" class="form-control mt-2" style="float: right; width: 90%; text-align: right;"  placeholder="ادخل رابط الملف  " />
         <button id="imagebtn${counterImage}"  onclick="return this.parentNode.remove();" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;" > - </button>
         <span asp-validation-for="Pdfs[${counterPdf}]" class="text-danger"></span>
         </div>`;
@@ -48,7 +66,8 @@ function AddPDF() {
 ///////////////// Hide And Display Images //////////////////
 var ImageContainer = document.getElementById("ContainerImages");
 
-function visibaleAndHideImages() {
+function visibaleAndHideImages()
+{
   if (ImageContainer.style.display != "none") {
     ImageContainer.style.display = "none";
   } else {
@@ -56,7 +75,7 @@ function visibaleAndHideImages() {
   }
 }
 
-///////////////// Hide And Display Images //////////////////
+///////////////// Hide And Display Videos //////////////////
 var VideoContainer = document.getElementById("ContainerVideos");
 
 function visibaleAndHideVideos() {
@@ -67,7 +86,7 @@ function visibaleAndHideVideos() {
   }
 }
 
-///////////////// Hide And Display Images //////////////////
+///////////////// Hide And Display PDFs //////////////////
 var PDFContainer = document.getElementById("ContainerPDFs");
 
 function visibaleAndHidePDF() {

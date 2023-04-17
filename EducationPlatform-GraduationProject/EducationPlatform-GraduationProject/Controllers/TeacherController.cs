@@ -1,11 +1,14 @@
 ﻿using EducationPlatform_GraduationProject.Data;
 using EducationPlatform_GraduationProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace EducationPlatform_GraduationProject.Controllers
 {
-    public class TeacherController : Controller
+	[Authorize(Roles = "Admin")]
+	public class TeacherController : Controller
     {
         private readonly ApplicationDbContext _context;
         public TeacherController(ApplicationDbContext context)

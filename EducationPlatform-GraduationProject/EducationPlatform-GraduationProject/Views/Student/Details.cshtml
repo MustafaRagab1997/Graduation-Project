@@ -1,21 +1,28 @@
 ﻿@model EducationPlatform_GraduationProject.ViewModels.ContentWithDetails
 
-@*<!DOCTYPE html>
-<html lang="en">*@
-
-@*<head>*@
-    @*<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ @section Head
+ {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/ViewContentDetailsStyle.css">*@
-@*</head>*@
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/ViewContentDetailsStyle.css">
+    <style>
 
+        .maindiv
+        {
+            background-image: url('../../Images/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+ }
    <title>Content Details</title>
-@*<body>*@
 
-    <div class="d-flex justify-content-center align-items-center">
+
+<div class="d-flex maindiv justify-content-center align-items-center" style="padding-top: 3rem; box-sizing: border-box;">
         <div class="card text-dark border-primary my-5 mx-3 " style="max-width: 60rem; width: 60rem;">
             
             @if (Model.ClassName == "First")
@@ -42,19 +49,19 @@
                     العنوان : @Model.Title
                 </h4>
                 <hr>
-            <h6 class="card-text" style="text-align: right;"> تاريخ المحاضرة:@Model.Date.ToString("dd/MM/yyyy hh:mm tt") </h6>
+            <h6 class="card-text" style="text-align: right;"> تاريخ المحاضرة : @Model.Date.ToString("dd/MM/yyyy hh:mm tt") </h6>
                 <hr>
             </div>
 
+        @if (Model.Images != null)
+        {
             <div class="card-body Images">
                 <h4 class="card-header bg-primary text-white" style="text-align: right;">
                     الصـــــــور
                     <i class='fas fa-angle-down mt-1' onclick="visibaleAndHideImages()" style="float: left; cursor: pointer;"></i>
                 </h4>
-            <div id="ContainerImages" style="display: none;">
-                    @if(Model.Images != null)
-                    {
-                        try
+                <div id="ContainerImages" style="display: none;"> 
+                        @try
                         {
                             foreach (var item in Model.Images)
                             {
@@ -65,78 +72,71 @@
                         {
                             <div> error </div>
                         }
-
-                    } 
-                    
-                </div>
+                 </div>
             </div>
+        }
 
+        @if (Model.Videos != null)
+        {
             <div class="card-body Videos">
                 <h4 class="card-header bg-primary text-white" style="text-align: right;">
                     الفيديوهات
                     <i class='fas fa-angle-down mt-1' onclick="visibaleAndHideVideos()" style="float: left; cursor: pointer;"></i>
                 </h4>
-            <div id="ContainerVideos" style="display: none;">
-                   
-
-                    @if (Model.Videos != null)
+            <div id="ContainerVideos" style="display: none;">                    
+                    @try
                     {
-                        try
+                        foreach (var item in Model.Videos)
                         {
-                            foreach (var item in Model.Videos)
-                            {
-                                <div style="padding-top:73%;position:relative;">
+                            <div style="padding-top:73%;position:relative;">
 
-                                    <iframe src="@item" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media"></iframe>
-                                </div>
-                            }
+                                <iframe src="@item" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
                         }
-                        catch
-                        {
-                            <div> error </div>
-                        }
-                        
-                    }  
+                    }
+                    catch
+                    {
+                        <div> error </div>
+                    }
                 </div>
             </div>
+        }
 
+        @if (Model.Pdfs != null)
+        {
             <div class="card-body PDFs">
                 <h4 class="card-header bg-primary text-white" style="text-align: right;">
                     الملفات
                     <i class='fas fa-angle-down mt-1' onclick="visibaleAndHidePDF()" style="float: left; cursor: pointer;"></i>
                 </h4>
                 <div id="ContainerPDFs" style="display: none;">
-                    @if (Model.Pdfs != null)
+                    @try
                     {
-                        try
+                        foreach (var item in Model.Pdfs)
                         {
-                            foreach (var item in Model.Pdfs)
-                            {
-                                <p>Open a PDF file <a href="@item">@Model.Title</a>.</p>
-                            }
+                            <p>Open a PDF file <a href="@item">@Model.Title</a>.</p>
                         }
-                        catch
-                        {
-                            <div> error </div>
-                        }
-                        
-                    }                    
+                    }
+                    catch
+                    {
+                        <div> error </div>
+                    }               
                 </div>
             </div>
+        }
 
             <a href="~/Student" class="btn btn-primary" style="font-size: 1.5rem"> رجــــــــوع</a>
         </div>
     </div>
     
-
+@section Scripts
+{
     <script src="https://kit.fontawesome.com/9c5842ef27.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-            crossorigin="anonymous"></script>
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
     <script src="~/js/addContent.js"></script>
-@*</body>
-
-</html>*@
+}

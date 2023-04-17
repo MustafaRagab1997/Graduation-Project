@@ -37,6 +37,22 @@
       "PackagePath": "staticwebassets\\Home\\mr2edited.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background.jpg",
+      "PackagePath": "staticwebassets\\Images\\background.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background2.jpg",
+      "PackagePath": "staticwebassets\\Images\\background2.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background3.jpg",
+      "PackagePath": "staticwebassets\\Images\\background3.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background4.jpg",
+      "PackagePath": "staticwebassets\\Images\\background4.jpg"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\img1.jpg",
       "PackagePath": "staticwebassets\\Images\\img1.jpg"
     },
@@ -233,6 +249,42 @@
       "PackagePath": "staticwebassets\\chat.png"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\AccessDenied_css.css",
+      "PackagePath": "staticwebassets\\css\\AccessDenied_css.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\MainImportant.css",
+      "PackagePath": "staticwebassets\\css\\Style\\MainImportant.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\full_width_animated_layers_002.css",
+      "PackagePath": "staticwebassets\\css\\Style\\full_width_animated_layers_002.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\line-icons.css",
+      "PackagePath": "staticwebassets\\css\\Style\\line-icons.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\Style\\magnific-popup.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\main.css",
+      "PackagePath": "staticwebassets\\css\\Style\\main.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\nivo-lightbox.css",
+      "PackagePath": "staticwebassets\\css\\Style\\nivo-lightbox.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\particles.css",
+      "PackagePath": "staticwebassets\\css\\Style\\particles.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\Style\\responsive.css"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\ViewContentDetailsStyle.css",
       "PackagePath": "staticwebassets\\css\\ViewContentDetailsStyle.css"
     },
@@ -361,6 +413,10 @@
       "PackagePath": "staticwebassets\\img\\blog-4.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\book.png",
+      "PackagePath": "staticwebassets\\img\\book.png"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\candidate-video.jpg",
       "PackagePath": "staticwebassets\\img\\candidate-video.jpg"
     },
@@ -381,6 +437,10 @@
       "PackagePath": "staticwebassets\\img\\es.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\exam.png",
+      "PackagePath": "staticwebassets\\img\\exam.png"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon.ico"
     },
@@ -391,6 +451,10 @@
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\hero-area.jpg",
       "PackagePath": "staticwebassets\\img\\hero-area.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\imageEye.png",
+      "PackagePath": "staticwebassets\\img\\imageEye.png"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\img-1.jpg",
@@ -473,12 +537,20 @@
       "PackagePath": "staticwebassets\\img\\slider-3.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\test.png",
+      "PackagePath": "staticwebassets\\img\\test.png"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\testimonial-bg.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-bg.jpg"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\tr.jpg",
       "PackagePath": "staticwebassets\\img\\tr.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\video.png",
+      "PackagePath": "staticwebassets\\img\\video.png"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\img\\videobg.jpg",
@@ -493,12 +565,60 @@
       "PackagePath": "staticwebassets\\img\\work.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery-min.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery-min.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery.mixitup.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery.mixitup.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery.nav.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery.nav.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\jquery.slicknav.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\main.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\main.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\nivo-lightbox.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\nivo-lightbox.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\wow.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\wow.js"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\addContent.js",
       "PackagePath": "staticwebassets\\js\\addContent.js"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\chat.js",
       "PackagePath": "staticwebassets\\js\\chat.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\contentjs.js",
+      "PackagePath": "staticwebassets\\js\\contentjs.js"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",

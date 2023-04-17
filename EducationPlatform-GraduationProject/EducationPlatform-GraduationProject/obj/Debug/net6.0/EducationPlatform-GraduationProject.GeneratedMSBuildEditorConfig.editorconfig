@@ -84,8 +84,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/First/CreateContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcQ3JlYXRlQ29udGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/First/DeleteContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcRGVsZXRlQ29udGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/First/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/First/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/First/Index.cshtml]
@@ -104,8 +116,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9udGhcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Second/CreateContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb25kXENyZWF0ZUNvbnRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Second/DeleteContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb25kXERlbGV0ZUNvbnRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Second/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb25kXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Second/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb25kXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Second/Index.cshtml]
@@ -144,8 +168,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxVcGRhdGVTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Third/CreateContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhpcmRcQ3JlYXRlQ29udGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Third/DeleteContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhpcmRcRGVsZXRlQ29udGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Third/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhpcmRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Third/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhpcmRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/المشروع/EducationPlatform-GraduationProject/EducationPlatform-GraduationProject/Views/Third/Index.cshtml]

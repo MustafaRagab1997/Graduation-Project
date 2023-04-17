@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 html {
     font-size: 14px;
 }
@@ -14,6 +15,7 @@ html {
 }
 
 body {
+    font-family: " Amiri", serif;
     margin-bottom: 60px;
     background-color: #90e0ef;
 }

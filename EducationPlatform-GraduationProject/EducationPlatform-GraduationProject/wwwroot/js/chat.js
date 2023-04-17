@@ -73,10 +73,11 @@ document.getElementById("showButton").addEventListener("click", function (event)
 
     document.getElementById("showButton").hidden = true;
     document.getElementById("addbtn").innerHTML += `
-        <button class="btn btn-primary" id = "secondbtn" type = "button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" > Live Chat</button>
+        
+    <button class="btn btn-primary" id="secondbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="margin-top:4rem !important ; width:10rem; background-color:darkcyan !important;border-color:white;font-weight:500;">المحاثات</button>
 
     `;
-
+    /*<button class="btn btn-primary" style="margin-top:4rem !important" id="secondbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" > Live Chat</button>*/
  
     var url1 = window.location.pathname.split('/');
     var nurl = url1[1];

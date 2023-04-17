@@ -3,14 +3,32 @@
     
        <input type="text" id="userInput" hidden />
        <input type="text" id="userInputName" value="@User.Identity.Name" hidden />
-   
 
-    <div class="row ro p-1" >
-        <div class="col-md-2" id="addbtn">
-        <button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Live Chat</button>
-      
+<div class="row p-1">
+		 <div class="col-md-2">
+		<button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="margin-top:4rem !important ; width:10rem; background-color:darkcyan !important;border-color:white;font-weight:600; font-size:1.5rem;">المحادثات</button>
         </div>
+		<div class="col-md-2">
+			<button class="btn btn-primary" style="margin-top:4rem !important ; width:11rem; background-color:darkcyan !important;border-color:white;font-weight:600; font-size:1.5rem;" asp-action="GetAllStudent" asp-controller="Teacher" asp-route-id="1">إدارة الطلاب</button>
+		</div>
+
+		<div class="col-md-2">
+			<button class="btn btn-primary" style="margin-top:4rem !important ; width:11rem; background-color:darkcyan !important;border-color:white;font-weight:600; font-size:1.5rem;" asp-action="CreateContent" asp-controller="First">إضافة محتوي جديد</button>
+		</div>
+		<div class="col-md-4 mt-5" style="margin-right:5rem;">
+        <button type="button" class="btn btn-primary" id="showbtn" style="margin-top:1rem;width:11rem;margin-right:-4rem; background-color:darkcyan;border-color:white; font-weight:600; font-size:1.5rem;">بدء الإجتماع</button>
+        <button type="button" class="btn btn-danger" id="endbtn" style="margin-top:1rem;width:11rem;margin-right:-4rem;border-color:white; font-weight:600; font-size:1.5rem;" hidden>إنهاء الإجتماع</button>
+            <div id='jitsi-container'></div>
+        </div>
+</div>
+
+
+
+<div class="row p-1" style="margin-top:6rem;">   
         <div class="col-md-10  d-flex flex-column justify-content-center align-items-center">
+		
+        @*<a href="~/First/CreateContent" class="btn btn-primary" style="display:inline">إضافة محتوى جديد</a>*@
+        @*<a href="~/Teacher/GetAllStudent/1" class="btn btn-success">إدارة الطلاب</a>*@
              @if (Model != null)
             {
                 foreach (var item in Model)
@@ -21,20 +39,25 @@
                         <div class="card-body">
                             <h5 class="card-title" style="text-align: right;"> العنوان : @item.Title </h5>
                             <hr>
-                            <h6 class="card-text" style="text-align: right;">  تاريخ المحاضرة:@item.Date.ToString("dd/MM/yyyy hh:mm tt")  </h6>
+                        <h6 class="card-text" style="text-align: right;">  تاريخ المحاضرة : @item.Date.ToString("dd/MM/yyyy hh:mm tt")  </h6>
                         </div>
                     <a href="~/First/Details/@item.Id" class="btn btn-primary"> عرض التفاصيل</a>
-                    </div>
-                
+                    <a href="~/First/Edit/@item.Id" class="btn btn-primary">تعديل المحتوى</a>
+                    <a href="~/First/DeleteContent/@item.Id" class="btn btn-primary">حذف المحتوى</a>                    
+                    </div>                
                 }
             }
              else
             {
-                <div>
+                @*<div style="position: absolute;right: 200px; color :wheat;">
                     <h4>لا توجد محاضرات حتي الان.</h4>
-                </div>
+                </div>*@
+				<div class="mt-5 d-flex align-items-center justify-content-center border border-5 border-primary" style="height: 20rem; width: 60rem; margin-right: 15%; background-color: #04639c; border-radius: 8rem 0 8rem 0;">
+        <				h1 class="display-2 fw-bold text-white">لا يوجد محتوي الآن </				h1>
+				</div>
             }
         </div>
+		
          <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
@@ -46,3 +69,76 @@
         </div>
        
 </div>
+@section Scripts{
+	<script src="https://meet.jit.si/external_api.js"></script>
+	<script>
+
+		var domain = "meet.jit.si";
+		var options = {
+			roomName: "firstyearstudent",
+			width: 700,
+			height: 400,
+			parentNode: document.querySelector('#jitsi-container'),
+			configOverwrite: {
+				prejoinPageEnabled: false,
+				startWithAudioMuted: true,
+				startWithVideoMuted: 10,
+				toolbarButtons: [
+					'camera',
+					'chat',
+					'closedcaptions',
+					'desktop',
+					'download',
+					'etherpad',
+					'feedback',
+					'filmstrip',
+					'fullscreen',
+					'highlight',
+					'linktosalesforce',
+					'microphone',
+					'participants-pane',
+					'profile',
+					'raisehand',
+					'security',
+					'select-background',
+					'settings',
+					'tileview',
+					'toggle-camera',
+					'videoquality',
+					'whiteboard',
+					'recording',
+
+				],
+				enforceModerator: true,
+				enableKickOutAll: true,
+				subject: 'الصف الاول الثانوي',
+				userInfo: {
+					email: '@User.Identity.Name',
+
+					displayName: `@User.Identity.Name`,
+				}
+			},
+			interfaceConfigOverwrite: {
+				TOOLBAR_ALWAYS_VISIBLE: false, // ok
+				SHOW_CHROME_EXTENSION_BANNER: false,
+				DEFAULT_LOCAL_DISPLAY_NAME: `@User.Identity.Name`,
+
+
+			}
+		}
+		document.getElementById('showbtn').addEventListener('click', function (event) {
+
+			document.getElementById('endbtn').hidden = false;
+			document.getElementById('showbtn').hidden = true;
+			var api = new JitsiMeetExternalAPI(domain, options);
+		});
+		document.getElementById('endbtn').addEventListener('click', function (event) {
+
+			document.getElementById('endbtn').hidden = true;
+			document.getElementById('jitsi-container').innerHTML = `<span></span>`;
+			document.getElementById('showbtn').hidden = false;
+			var api = 'new JitsiMeetExternalAPI(domain, options)';
+		});
+
+	</script>
+}

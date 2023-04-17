@@ -114,27 +114,42 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
 			ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
 			var checkalogged = await _context.OneDeviceLogin.Where(m => m.userName == Input.Email).FirstOrDefaultAsync();
-			if (checkalogged == null)
-			{
-				var xlogging = new OneDeviceLogin
-				{
-					userName = Input.Email
-				};
-				await _context.OneDeviceLogin.AddAsync(xlogging);
-				await _context.SaveChangesAsync();
-			}
-			else
-			{
-				ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-				return Page();
-			}
+			
 			if (ModelState.IsValid)
 			{
 				// This doesn't count login failures towards account lockout
 				// To enable password failures to trigger account lockout, set lockoutOnFailure: true
 				var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                ///////////////////////////////////////////////////////////////////////////
 
 				if (result.Succeeded)
+				{
+                    if (checkalogged == null)
+                    {
+                        var xlogging = new OneDeviceLogin
+                        {
+                            userName = Input.Email
+                        };
+                        await _context.OneDeviceLogin.AddAsync(xlogging);
+                        await _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "لا يمكن تسجيل الدخول من جهازين في نفس الوقت");
+                        return Page();
+                    }
+                }
+				else
+				{
+                    ModelState.AddModelError(string.Empty, "خطأ في اسم المستخدم أو كلمة المرور");
+                    return Page();
+                }
+                
+
+                /////////////////////////////////////////////////////////
+
+
+                if (result.Succeeded)
 				{
 					//var student = _context.Students.Select(s => s.UserIdentity.UserName);
 					var loggedUser = Input.Email;
@@ -143,7 +158,7 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
 
 					if (roleName == "Admin")
 					{
-						return RedirectToAction("Index", "Admin");
+						return RedirectToAction("Index", "Home");
 					}
 					else
 					{
@@ -165,14 +180,10 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
 				//}
 				else
 				{
-					ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-					return Page();
-				}
+                    ModelState.AddModelError(string.Empty, "خطأ في اسم المستخدم أو كلمة المرور");
+                    return Page();
+                }
 			}
-
-
-
-
 			// If we got this far, something failed, redisplay form
 			return Page();
 		}

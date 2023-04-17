@@ -1,7 +1,15 @@
-@import url(https://fonts.googleapis.com/earlyaccess/lateef.css); 
+/*@import url(https://fonts.googleapis.com/earlyaccess/lateef.css); */
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 
-body{
-    font-family: 'Lateef', serif;
+body {
+    font-family: "Amiri", serif;
+    background-image: url('../../Images/background4.jpg');    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
 }
 
 

@@ -1,0 +1,111 @@
+﻿@model EducationPlatform_GraduationProject.ViewModels.ContentWithDetails
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>ContentWithDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Second">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:none">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="ClassIdfk" class="control-label"></label>
+                <input asp-for="ClassIdfk" class="form-control"/>
+                <span asp-validation-for="ClassIdfk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">الاسم</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">التاريخ</label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassName" class="control-label">الصف الدراسي</label>
+                <input asp-for="ClassName" class="form-control" readonly  />
+                <span asp-validation-for="ClassName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">                
+                <div class="form-group" id="Images">
+                    <div>
+                        <label asp-for="Images" class="control-label  mt-3 mb-2 text-primary w-100">
+                            <span style="float: right;">الصور</span>
+                        </label>
+                        <button type="button" id="BtnAddImages" class="btn btn-primary" style="width: 8%; float: left;"
+                                onclick="AddImages()">+</button>
+                        <button type="button" id="imgsbtn" onclick="removeimg()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;">-</button>
+                    </div>
+                    <span id="ImgsCount" data-value="@Model.Images.Count()"></span>
+                    @for (int i = 0; i < Model.Images.Count(); i++)
+                    {
+                        <input asp-for="Images[i]" class="form-control"
+                           style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الصورة"/>
+                        <span asp-validation-for="Images" class="text-danger"></span>
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group" id="Videos">
+                    <div>
+                        <label asp-for="Videos" class="control-label  mt-3 mb-2 text-primary w-100">
+                            <span style="float: right;">الفيديوهات</span></label>
+                        <button type="button" id="BtnAddVideo" class="btn btn-primary" style="width: 8%; float: left;"
+                                onclick="AddVideo()">+</button>
+                        <button type="button" id="videobtn" onclick="removevideo()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;">-</button>
+                    </div>
+                    <span id="VideosCount" data-value="@Model.Videos.Count()"></span>
+                    @for (int i = 0; i < Model.Videos.Count(); i++)
+                    {
+                        <input asp-for="Videos[i]" class="form-control"
+                           style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الفيديو"/>
+                        <span asp-validation-for="Videos" class="text-danger"></span>
+                    }
+                </div>
+            </div> 
+           <div class="form-group">
+                <div class="form-group" id="PDFs">
+                    <div>
+                        <label asp-for="Pdfs" class="control-label  mt-3 mb-2 text-primary w-100">
+                            <span style="float: right;">اضافة ملف</span>
+                        </label>
+                        <button type="button" id="BtnAddPDF" class="btn btn-primary" style="width: 8%; float: left;"
+                                onclick="AddPDF()">+</button>
+                        <button type="button" id="pdfbtn" onclick="removepdf()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;"> - </button>
+                    </div>
+                    <span id="PDFCount" data-value="@Model.Pdfs.Count()"  ></span>
+                    @for(int i = 0 ; i<Model.Pdfs.Count();i++)                    
+                    {
+                        <input asp-for="Pdfs[i]" class="form-control"
+                               style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الملف  " />
+                        <span asp-validation-for="Pdfs" class="text-danger"></span>
+                    }
+                </div>                
+           </div> 
+
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Second">Back to List</a>
+</div>
+@section Scripts
+{
+    <script src="~/js/contentjs.js"></script>
+}

@@ -58,5 +58,106 @@ namespace EducationPlatform_GraduationProject.Controllers
 			}
 
 		}
-	}
+
+
+        #region 15-4-2023
+        [HttpGet]
+        public async Task<IActionResult> DeleteContentAsync(int id)
+        {
+            ContentVM content = new ContentVM();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage res = await client.GetAsync("api/Contents/ContentByItsIDWithoutDetails/" + id);
+                if (res.IsSuccessStatusCode)
+                {
+                    var resulte = res.Content.ReadAsStringAsync().Result;
+                    content = JsonConvert.DeserializeObject<ContentVM>(resulte);
+                }
+            }
+            return View(content);
+        }
+        [HttpPost]
+        public IActionResult DeleteContent(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage res = client.DeleteAsync($"{Baseurl}api/Contents/" + id).Result;
+                if (res.IsSuccessStatusCode)
+                {
+                    ViewBag.msg = "Deleted successfully";
+                    return RedirectToAction("Index", "First");
+                }
+                else
+                {
+                    ViewBag.msg = "some thing went wrong";
+                }
+                return View();
+            }
+        }
+                
+        public async Task<IActionResult> CreateContent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateContent(ContentWithDetails content)
+        {
+            HttpClient Client = new HttpClient();
+            HttpResponseMessage Response =
+                await Client.PostAsJsonAsync($"{Baseurl}api/Contents/CreateNewContent", content);
+            if (Response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync($"{Baseurl}api/Contents/ContentByIDWithAllDetails/" + id);
+            if (response.IsSuccessStatusCode)
+            {
+                string Res = await response.Content.ReadAsStringAsync();
+                ContentWithDetails? contents = JsonConvert.DeserializeObject<ContentWithDetails>(Res);
+                return View(contents);
+
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(ContentWithDetails contentWithDetails)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage res = client.PutAsJsonAsync("http://localhost:5295/api/Contents/NewUpdateContent", contentWithDetails).Result;
+                if (res.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Privacy", "Home");
+                }
+            }
+        }
+        #endregion
+    }
 }

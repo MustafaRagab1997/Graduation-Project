@@ -4,7 +4,45 @@
     ViewData["Title"] = "Access denied";
 }
 
-<header>
+@*<header>
     <h1 class="text-danger">@ViewData["Title"]</h1>
     <p class="text-danger">You do not have access to this resource.</p>
-</header>
+</header>*@
+
+
+   
+@section Head
+{
+    <title>Access Denied</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="~/css/AccessDenied_css.css" rel="stylesheet">
+}
+<div class="parent">
+    <div class="FirstChild">
+        <div class="message">You are not authorized.</div>
+        <div class="message2">You tried to access a page you did not have authorization for.</div>
+        <br>
+        <div class="message3">غير مسموح لك بالدخول </div>
+        <div class="message4">أنت تحاول الوصول الى صفحة لا تمتلك الصلاحية للوصول اليها</div>
+    </div>
+    <div class="container">
+        <div class="neon">403</div>
+        <div class="door-frame">
+            <div class="door">
+                <div class="rectangle">
+                </div>
+                <div class="handle">
+                </div>
+                <div class="window">
+                    <div class="eye">
+                    </div>
+                    <div class="eye eye2">
+                    </div>
+                    <div class="leaf">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
