@@ -34,7 +34,7 @@ body {
 /*}*/
 .chat-container {
     width: 400px;
-    height: 500px;
+    height: 43rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;
@@ -93,6 +93,7 @@ body {
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        font-weight:bold;
     }
 
         .chat-footer button:hover {
@@ -119,7 +120,7 @@ div.outgoing {
 }
 
 .container1 {
-    background-color: rgb(141 220 255);
+    /*background-color: rgb(141 220 255);*/
     height: 100vh;
     display: flex;
     align-items: center;
@@ -179,7 +180,7 @@ div.outgoing {
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #69d6e9;
+    background-color: #105662;
     color: white;
     width: 100%;
     padding: 15px;

@@ -37,17 +37,18 @@ var spanValidConfirmPassword = document.getElementById("ValidConfirmPassword");
 var spanValidAddress = document.getElementById("ValidAddress");
 var spanValidphone = document.getElementById("ValidPhone");
 
+
 //Vlaidate Name
 function NameChange() {
   if (InputName.value.trim().length != 0) {
-    if (/[0-9]/.test(InputName.value) == false) {
+      if (/^[\u0621-\u064A_ ]+$/.test(InputName.value) == true) {
       InputName.style.border = "2px solid green";
       spanValidName.style.display = "none";
       IsValidName = true;
     } else {
       InputName.style.border = "2px solid red";
       spanValidName.style.display = "block";
-      spanValidName.innerHTML = "لا يمكن إدخال ارقام فى اسم الطالب     ";
+        spanValidName.innerHTML = "اسم الطالب يجب ان يحتوي على حروف فقط";
       IsValidName = false;
     }
   } else {
@@ -161,54 +162,3 @@ function validateForm() {
     return false;
   }
 }
-
-// function validateForm() {
-//   if (InputName.value != "") {
-//     if (/[0-9]/.test(InputName.value) == false) {
-//       if (InputUserName.value != "") {
-//         var regularExpression =
-//           /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-//         if (regularExpression.test(InputPassword.value)) {
-//           if (InputPassword.value == InputConfirmPassword.value) {
-//             if (InputAddress != "") {
-//               var regexMobile = /^01[0125][0-9]{8}$/;
-//               if (regexMobile.test(InputPhone.value)) {
-//                 return true;
-//               } else {
-//                 spanValidphone.style.display = "block";
-//                 spanValidphone.innerHTML =
-//                   "يجب انا يكون رقم الهاتف 11 رقم وانا يبدأ ب (010 أو 011 أو 012 أو 015)";
-//                 return false;
-//               }
-//             } else {
-//               spanValidAddress.style.display = "block";
-//               spanValidAddress.innerHTML = "يجب ادخال العنوان ";
-//               return false;
-//             }
-//           } else {
-//             spanValidConfirmPassword.style.display = "block";
-//             spanValidConfirmPassword.innerHTML = "كلمة السر غير متاطبقة ";
-//             return false;
-//           }
-//         } else {
-//           spanValidPassword.style.display = "block";
-//           spanValidPassword.innerHTML =
-//             "كلمة السر يجب أن تحتوي تكون اطول من 6 وتحتوي علي ارقام وحروف كبيرة وصغيرة و علامات ";
-//           return false;
-//         }
-//       } else {
-//         spanValidUserName.style.display = "block";
-//         spanValidUserName.innerHTML = "يجب إدخال اسم المستخدم ";
-//         return false;
-//       }
-//     } else {
-//       spanValidName.style.display = "block";
-//       spanValidName.innerHTML = "لا يمكن إدخال ارقام فى اسم الطالب ";
-//       return false;
-//     }
-//   } else {
-//     spanValidName.style.display = "block";
-//     spanValidName.innerHTML = "يجب إدخال اسم الطالب ";
-//     return false;
-//   }
-// }

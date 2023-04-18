@@ -4,24 +4,37 @@
 @{
     ViewData["Title"] = "Log in";
 }
-
+@section Head
+    {
+    <style>
+        body {
+            background-image: url('../../../../Images/login.jpg');            
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+}
 <div class="container1">
 
-    <div class="row">
-        <div class="box">
+    <div class="row" style="margin-top:6rem;">
+        <div class="box" style="border: 2px solid darkcyan;">
             <h1>تسجيل الدخول</h1>
             <form id="account" method="post">                
                 <label asp-for="Input.Email" class="label1">إسم المستخدم</label>
                 <div class="divCss">
                     <i class="fa-solid fa-user"></i>
-                    <input asp-for="Input.Email" class="inputCss"  aria-required="true" placeholder=" إسم المستخدم" required />
+                    <input asp-for="Input.Email" class="inputCss" style="direction:ltr; font-weight:bold;"  aria-required="true" placeholder=" إسم المستخدم" required />
                     @*<span asp-validation-for="Input.Email" class="text-danger"></span>*@
                 </div>
                 <br />
                 <label asp-for="Input.Password" class="label2">كلمة المرور</label>
                 <div class="divCss">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" asp-for="Input.Password" class=" inputCss"  aria-required="true" placeholder="كلمة المرور" required />
+                    <input type="password" asp-for="Input.Password" style="direction:ltr;font-weight:bold;" class=" inputCss" aria-required="true" placeholder="كلمة المرور" required />
                     @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
                 </div>
                 <div>

@@ -29,12 +29,44 @@
       "PackagePath": "staticwebassets\\Home\\logo.png"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Home\\logo3.png",
+      "PackagePath": "staticwebassets\\Home\\logo3.png"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Home\\mr2.jpg",
       "PackagePath": "staticwebassets\\Home\\mr2.jpg"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Home\\mr2edited.jpg",
       "PackagePath": "staticwebassets\\Home\\mr2edited.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\01.jpg",
+      "PackagePath": "staticwebassets\\Images\\01.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\02.jpg",
+      "PackagePath": "staticwebassets\\Images\\02.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\02.jpg_large",
+      "PackagePath": "staticwebassets\\Images\\02.jpg_large"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\03.png",
+      "PackagePath": "staticwebassets\\Images\\03.png"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\04.jpg",
+      "PackagePath": "staticwebassets\\Images\\04.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\05.jpg",
+      "PackagePath": "staticwebassets\\Images\\05.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\06.jpg",
+      "PackagePath": "staticwebassets\\Images\\06.jpg"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\33.jpg",
@@ -61,8 +93,16 @@
       "PackagePath": "staticwebassets\\Images\\background4.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\download.jpg",
+      "PackagePath": "staticwebassets\\Images\\download.jpg"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\img1.jpg",
       "PackagePath": "staticwebassets\\Images\\img1.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\login.jpg",
+      "PackagePath": "staticwebassets\\Images\\login.jpg"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\MainImportant.css",
@@ -263,6 +303,10 @@
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\DeleteStu.css",
       "PackagePath": "staticwebassets\\css\\DeleteStu.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\EditMonth.css",
+      "PackagePath": "staticwebassets\\css\\EditMonth.css"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\MainImportant.css",
@@ -623,6 +667,10 @@
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\wow.js",
       "PackagePath": "staticwebassets\\js\\Scripts\\wow.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\UpdateStudent.js",
+      "PackagePath": "staticwebassets\\js\\UpdateStudent.js"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\addContent.js",

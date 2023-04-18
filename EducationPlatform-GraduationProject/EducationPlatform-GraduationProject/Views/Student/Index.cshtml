@@ -34,14 +34,14 @@
         }
     </style>
 }
-    <div class="row ro">
+    <div class="row ro" style="margin-top:2rem;">
         <div class="col-md-2">
-            <button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="margin-top:4rem !important ; width:10rem; background-color:darkcyan !important;border-color:white;font-weight:600; font-size:1.5rem;">المحادثات</button>
-
+        <button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="border-radius: 30px;margin-top: 4rem !important;width: 11rem;background-color: darkcyan !important;        border-color: white;font-weight: 600;font-size: 1.5rem;">المحادثات</button>
+        
         </div>
         <div class="col-md-4 mt-5">        
-        <button type="button" class="btn text-light" id="showbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top:1rem;width:10rem;margin-right:-4rem; background-color:darkcyan;border-color:white; font-weight:600; font-size:1.5rem;">بدء الإجتماع</button>       
-        </div>
+        <button type="button" class="btn text-light" id="showbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="border-radius: 30px;margin-top:1rem !important;width: 11rem;background-color: darkcyan !important;border-color: white;font-weight: 600;font-size: 1.5rem;">بدء الإجتماع</button>
+    </div>
         <div class="col-md-10 flex-wrap d-flex justify-content-center align-items-center" style="margin-right:10rem;">
             @if (Model != null && Model.Count()>0 )
             {                
@@ -70,13 +70,13 @@
                             <hr>
                             <h6 class="card-text" style="text-align: right;">  تاريخ المحاضرة : @item.Date.ToString("dd/MM/yyyy hh:mm tt")  </h6>
                         </div>
-                        <a  href="~/Student/Details/@item.Id" class="btn btn-primary"> عرض التفاصيل</a>
+                    <a href="~/Student/Details/@item.Id" class="btn btn-primary" style="font-weight: bold;font-size: larger;"> عرض التفاصيل</a>
                     </div>
                 }
             }
             else
             {
-            <div class="mt-5 d-flex align-items-center justify-content-center border border-5 border-primary" style="height: 14rem; width: 60rem; margin-right: 10%; background-color: #04639c; border-radius: 8rem 0 8rem 0;">
+            <div class="mt-5 d-flex align-items-center justify-content-center border border-5 border-primary" style="height: 10rem; width: 55rem;  background-color: #04639c;margin-top:-20rem !important; border-radius: 8rem 0 8rem 0;">
                 <h1 class="display-2 fw-bold text-white">لا يوجد محتوي الآن </h1>
             </div>
             }

@@ -5,12 +5,13 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
+        @*asp - area = "Identity" title = "Manage"*@
         <li class="nav-item mx-2">
-            <a class="nav-link Nav-Links" style="color:white !important; font-size:1.2rem !important;" asp-area="Identity" title="Manage">مرحبا @User.Identity?.Name</a>
+            <a class="nav-link Nav-Links" style="color:white !important; font-size:1.2rem !important;">مرحبا @User.Identity?.Name</a>
         </li>
         <li class="nav-item mx-2">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-light">تسجيل الخروج</button>
+                <button type="submit" style="font-weight: bold !important;font-size: 1rem;" class="nav-link btn btn-link text-light">تسجيل الخروج</button>
             </form>
         </li>
     }
