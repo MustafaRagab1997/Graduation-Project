@@ -4,42 +4,79 @@
     ViewData["Title"] = "GetAllStudent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <link rel="stylesheet" href="~/css/getallstudents.css">
-</head>
-<h1>قائمة الطلاب</h1>
-
-<p>
-    <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">إضافة طالب</a>
-</p>
-@if (Model.Count() > 0)
+@section Head
 {
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    اسم الطالب
-                </th>
-                <th>
-                    رقم الهاتف
-                </th>
-                <th>
-                    العنوان
-                </th>
-                <th>
-                    تاريخ التسجيل
-                </th>
-                <th>
-                    الصف الدراسي
-                </th>
+    <style>
+        body{
+            background-image: url('../../Images/background.jpg');            
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+}
 
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
+<h3 style="margin-top: 7rem;text-align: center;font-size: 3rem;font-weight: 600;text-shadow: 2px 2px 4px rgba(179, 147, 211, 0.1); text-shadow: 1px 1px 1px #000000, 1px 2px 1px #957dad, 1px 3px 1px #000000, 1px 4px 1px #957dad, 1px 5px 1px #8a63b1, 1px 6px 1px #8a63b1, 1px 10px 5px rgba(16, 16, 16, 0.5), 1px 15px 10px rgba(16, 16, 16, 0.4), 1px 20px 30px rgba(16, 16, 16, 0.3), 1px 25px 50px rgba(16, 16, 16, 0.2);
+    color: white;">
+    قائمة الطلاب
+</h3>
+<div style="margin-top:3rem;">
+    @{
+    if (TempData["CreateContent"] != null)
+    {
+        <div class="alert alert-dismissible alert-success" style="width:50%; margin-right:20%;height:67px;font-size:25px;color:white; text-align:center; background-color:darkcyan !important;">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            تم إضافة المحتوى بنجاح .
+        </div>
+    }
+    if (TempData["UpdateStudent"] != null)
+    {
+        <div class="alert alert-dismissible alert-success" style="width:50%; margin-right:20%;height:67px;font-size:25px;color:white; text-align:center; background-color:darkcyan !important;">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            تم تعديل بيانات الطالب بنجاح .
+        </div>
+    }
+
+    if (TempData["DeleteStudent"] != null)
+    {
+        <div class="alert alert-dismissible alert-success" style="width:50%; margin-right:20%;height:67px;font-size:25px;color:white; text-align:center; background-color:darkcyan !important;">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" ></button>
+            تم حذف الطالب بنجاح.
+        </div>
+    }
+
+}
+        @if (Model.Count() > 0)
+        { 
+            <table class="table text-center " style=" background: linear-gradient(to right, #2980b9, #2c3e50);">
+                <thead style="border-bottom: 2px solid white ;">
+                    <tr class="table-dark text-light" style="font-size: 1.3rem; font-weight: bold;">
+                    <th>اسم الطالب
+                    </th>
+                    <th>
+                        رقم الهاتف
+                    </th>
+                    <th>
+                        العنوان
+                    </th>
+                    <th>
+                        تاريخ التسجيل
+                    </th>
+                    <th>
+                        الصف الدراسي
+                    </th>
+
+                    <th>كلمة المرور</th>                    
+                    <th> </th>
+                    </tr>
+                </thead>
+                <tbody class="text-light" style="font-size: 1.2rem; border-bottom: 2px solid black ;">
+                @foreach (var item in Model)
+                {
+                    <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.StName)
                     </td>
@@ -52,42 +89,43 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.RegistedDate)
                     </td>
-                    
-                        @if (item.Class.Title == "First")
-                        {
-                            <td>
-                            الصف الأول الثانوي
-                            </td>
-                        }
-                        else if (item.Class.Title == "Second")
-                        {
-                            <td>
-                            الصف الثاني الثانوي
-                            </td>
-                        }
-                        else
-                        {
-                            <td>
-                            الصف الثالث الثانوي
-                            </td>
-                        }
-                        
-                   
 
+                    @if (item.Class.Title == "First")
+                    {
+                        <td>
+                            الصف الأول الثانوي
+                        </td>
+                    }
+                    else if (item.Class.Title == "Second")
+                    {
+                        <td>
+                            الصف الثاني الثانوي
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            الصف الثالث الثانوي
+                        </td>
+                    }
                     <td>
-                        <a asp-action="UpdateStudent" asp-route-id="@item.StId" class="btn btn-primary">تعديل البيانات</a> |
-                        @*<a asp-action="Details" asp-route-id="@item.StId" class="btn btn-primary">عرض التفاصيل</a> |*@
-                        <a asp-action="Edit" asp-controller="Month" asp-route-id="@item.StId" class="btn btn-primary">تعديل الشهور</a> |
-                        <a asp-action="DeleteStudent" asp-route-id="@item.StId" class="btn btn-danger">Delete</a>
+                        @Html.DisplayFor(modelItem => item.StPassword)
                     </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <div>
-        لا يوجد طلاب حتى الآن
-    </div>    
-}
+                        <td>                   
+                            <a class="btn btn-primary" asp-action="UpdateStudent" asp-route-id="@item.StId">تعديل البيانات </a>
+                            <a class="btn btn-dark" asp-action="Edit" asp-controller="Month" asp-route-id="@item.StId">تعديل الشهور </a>
+                            <a class="btn btn-danger" asp-action="DeleteStudent" asp-route-id="@item.StId">حذف </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+     
+        </table>
+    }
+    else
+    {
+        <div>
+            لا يوجد طلاب حتى الآن
+        </div>
+    }
+</div>   

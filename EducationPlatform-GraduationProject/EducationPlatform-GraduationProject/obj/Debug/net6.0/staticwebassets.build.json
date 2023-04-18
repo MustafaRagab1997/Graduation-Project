@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A33ZVqmvtYjHGDcfRLlDOPWL7eLsWiinT+wvG5j5oII=",
+  "Hash": "tA0T6HTzjr2WrnqthwOr5jLkysHjf9mxe48g0dEqTso=",
   "Source": "EducationPlatform-GraduationProject",
   "BasePath": "_content/EducationPlatform-GraduationProject",
   "Mode": "Default",
@@ -1173,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\css\\css.css"
     },
     {
+      "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\DeleteStu.css",
+      "SourceId": "EducationPlatform-GraduationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\",
+      "BasePath": "_content/EducationPlatform-GraduationProject",
+      "RelativePath": "css/DeleteStu.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DeleteStu.css"
+    },
+    {
       "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\getallstudents.css",
       "SourceId": "EducationPlatform-GraduationProject",
       "SourceType": "Discovered",
@@ -1188,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\getallstudents.css"
+    },
+    {
+      "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\new.css",
+      "SourceId": "EducationPlatform-GraduationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\",
+      "BasePath": "_content/EducationPlatform-GraduationProject",
+      "RelativePath": "css/new.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\new.css"
     },
     {
       "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\site.css",
@@ -1681,6 +1715,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Home\\New Text Document.txt"
+    },
+    {
+      "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\33.jpg",
+      "SourceId": "EducationPlatform-GraduationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\",
+      "BasePath": "_content/EducationPlatform-GraduationProject",
+      "RelativePath": "Images/33.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\33.jpg"
+    },
+    {
+      "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\backg.jpg",
+      "SourceId": "EducationPlatform-GraduationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\",
+      "BasePath": "_content/EducationPlatform-GraduationProject",
+      "RelativePath": "Images/backg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\backg.jpg"
     },
     {
       "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background.jpg",
@@ -2735,6 +2803,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\contentjs.js"
+    },
+    {
+      "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\script.js",
+      "SourceId": "EducationPlatform-GraduationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\",
+      "BasePath": "_content/EducationPlatform-GraduationProject",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
       "Identity": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\Scripts\\bootstrap.min.js",

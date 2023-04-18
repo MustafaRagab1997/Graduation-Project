@@ -10,20 +10,18 @@
     <div class="row">
         <div class="box">
             <h1>تسجيل الدخول</h1>
-            <form id="account" method="post">
-
-                
+            <form id="account" method="post">                
                 <label asp-for="Input.Email" class="label1">إسم المستخدم</label>
                 <div class="divCss">
                     <i class="fa-solid fa-user"></i>
-                    <input asp-for="Input.Email" class="inputCss" autocomplete="username" aria-required="true" placeholder=" إسم المستخدم" required />
+                    <input asp-for="Input.Email" class="inputCss"  aria-required="true" placeholder=" إسم المستخدم" required />
                     @*<span asp-validation-for="Input.Email" class="text-danger"></span>*@
                 </div>
                 <br />
                 <label asp-for="Input.Password" class="label2">كلمة المرور</label>
                 <div class="divCss">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" asp-for="Input.Password" class=" inputCss" autocomplete="current-password" aria-required="true" placeholder="كلمة المرور" required />
+                    <input type="password" asp-for="Input.Password" class=" inputCss"  aria-required="true" placeholder="كلمة المرور" required />
                     @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
                 </div>
                 <div>

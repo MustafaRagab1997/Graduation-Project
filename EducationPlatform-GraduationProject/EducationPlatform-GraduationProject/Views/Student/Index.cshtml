@@ -11,12 +11,7 @@
 @section Head
 {
     <style>
-        .chatbtn {
-            font-size: 80px;
-            color: #007bff;
-        }
-
-        .ro {
+        body{
             background-image: url('../../Images/background2.jpg');
             /*background-image: url('/Chemistry.jpg.thumb.1280.1280.jpg');*/
             background-repeat: no-repeat;
@@ -25,29 +20,31 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        .chatbtn {
+            font-size: 80px;
+            color: #007bff;
+        }
+
+        .ro {
+           
             width: 100%;
-            height:auto;
-            z-index: 3000;
+            height:100vh;
+            z-index: 1000;
         }
     </style>
 }
-    
-@* <title>Document</title>
-</head>
-<body>*@
     <div class="row ro">
         <div class="col-md-2">
             <button class="btn btn-primary" id="showButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="margin-top:4rem !important ; width:10rem; background-color:darkcyan !important;border-color:white;font-weight:600; font-size:1.5rem;">المحادثات</button>
 
         </div>
-        <div class="col-md-4 mt-5">
-        <button type="button" class="btn btn-primary" id="showbtn" style="margin-top:1rem;width:10rem;margin-right:-4rem; background-color:darkcyan;border-color:white; font-weight:600; font-size:1.5rem;">بدء الإجتماع</button>
-        <button type="button" class="btn btn-danger" id="endbtn" style="margin-top:1rem;width:10rem;margin-right:-4rem;border-color:white; font-weight:600; font-size:1.5rem;" hidden>إنهاء الإجتماع</button>
-            <div id='jitsi-container'></div>
+        <div class="col-md-4 mt-5">        
+        <button type="button" class="btn text-light" id="showbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top:1rem;width:10rem;margin-right:-4rem; background-color:darkcyan;border-color:white; font-weight:600; font-size:1.5rem;">بدء الإجتماع</button>       
         </div>
         <div class="col-md-10 flex-wrap d-flex justify-content-center align-items-center" style="margin-right:10rem;">
-            @if (Model != null)
-            {
+            @if (Model != null && Model.Count()>0 )
+            {                
                 foreach (var item in Model)
                 {
                     <div class="card text-dark border-primary my-5 mx-3 " style="max-width: 40rem; width: 40rem;">
@@ -55,14 +52,18 @@
                         @if (@item.ClassName == "First")
                         {
                             <div class="card-header" style="text-align: right;">الصف الأول الثانوي</div>
+                            <input type="text" id="studentclass" value="firstyearstudent" hidden />
+
                         }
                         else if (@item.ClassName == "Second")
                         {
                             <div class="card-header" style="text-align: right;">الصف الثاني الثانوي</div>
+                            <input type="text" id="studentclass" value="secondyearstudent" hidden />
                         }
                         else
                         {
                             <div class="card-header" style="text-align: right;">الصف الثالث الثانوي</div>
+                            <input type="text" id="studentclass" value="thirdyearstudent" hidden />     
                         }
                         <div class="card-body">
                             <h5 class="card-title" style="text-align: right;"> العنوان : @item.Title </h5>
@@ -75,11 +76,30 @@
             }
             else
             {
-                <div class="mt-5 d-flex align-items-center justify-content-center border border-5 border-primary" style="height: 20rem; width: 60rem; margin-right: 15%; background-color: #04639c; border-radius: 8rem 0 8rem 0;">
-                    <h1 class="display-2 fw-bold text-white">لا يوجد محتوي الآن </h1>
-				</div>
+            <div class="mt-5 d-flex align-items-center justify-content-center border border-5 border-primary" style="height: 14rem; width: 60rem; margin-right: 10%; background-color: #04639c; border-radius: 8rem 0 8rem 0;">
+                <h1 class="display-2 fw-bold text-white">لا يوجد محتوي الآن </h1>
+            </div>
             }
-        </div>        
+        </div>
+    <!-- Modal -->
+         <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                        <button type="button" class="btn-close" id="endbtn1" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id='jitsi-container'></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="endbtn" data-bs-dismiss="modal">Close</button>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
 
        
         <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -106,11 +126,12 @@
     <script src="~/js/site.js"></script>
     <script src="https://meet.jit.si/external_api.js"></script>
     <script>
+        var classname = document.getElementById("studentclass").value;
         var domain = "meet.jit.si";
         var options = {
-            roomName: "firstyearstudent",
-            width: 800,
-            height: 400,
+            roomName: classname,
+            width: '100%',
+            height: '30em',
             parentNode: document.querySelector('#jitsi-container'),
             configOverwrite: {
                 prejoinPageEnabled: false,
@@ -118,6 +139,8 @@
                 startWithVideoMuted: 10,
                 toolbarButtons: ['microphone', 'chat', 'fullscreen', 'raisehand'],
                 disableRemoteControl: true,
+
+
                 disableRemoteMute: true,
                 remoteVideoMenu: {
                     disableKick: true,
@@ -126,13 +149,17 @@
                     email: '@User.Identity.Name',
                     displayName: '@User.Identity.Name',
                 }
+
             },
             interfaceConfigOverwrite: {
                 TOOLBAR_ALWAYS_VISIBLE: false,
                 SHOW_CHROME_EXTENSION_BANNER: false,
                 DEFAULT_LOCAL_DISPLAY_NAME: `@User.Identity.Name`,
+
+
             }
         };
+
         document.getElementById('showbtn').addEventListener('click', function (event) {
 
             document.getElementById('endbtn').hidden = false;
@@ -142,6 +169,13 @@
         document.getElementById('endbtn').addEventListener('click', function (event) {
 
             document.getElementById('endbtn').hidden = true;
+            document.getElementById('jitsi-container').innerHTML = `<span></span>`;
+            document.getElementById('showbtn').hidden = false;
+            var api = 'new JitsiMeetExternalAPI(domain, options)';
+        });
+        document.getElementById('endbtn1').addEventListener('click', function (event) {
+
+            document.getElementById('endbtn1').hidden = true;
             document.getElementById('jitsi-container').innerHTML = `<span></span>`;
             document.getElementById('showbtn').hidden = false;
             var api = 'new JitsiMeetExternalAPI(domain, options)';

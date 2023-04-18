@@ -117,42 +117,28 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
 			
 			if (ModelState.IsValid)
 			{
-				// This doesn't count login failures towards account lockout
-				// To enable password failures to trigger account lockout, set lockoutOnFailure: true
-				var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-                ///////////////////////////////////////////////////////////////////////////
-
-				if (result.Succeeded)
-				{
-                    if (checkalogged == null)
-                    {
-                        var xlogging = new OneDeviceLogin
-                        {
-                            userName = Input.Email
-                        };
-                        await _context.OneDeviceLogin.AddAsync(xlogging);
-                        await _context.SaveChangesAsync();
-                    }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "لا يمكن تسجيل الدخول من جهازين في نفس الوقت");
-                        return Page();
-                    }
-                }
-				else
-				{
-                    ModelState.AddModelError(string.Empty, "خطأ في اسم المستخدم أو كلمة المرور");
+                if (checkalogged != null)                
+                {
+                    ModelState.AddModelError(string.Empty, "لا يمكن تسجيل الدخول من جهازين في نفس الوقت");
+                    Input.Email = null;
+                    Input.Password = null;
                     return Page();
                 }
-                
 
-                /////////////////////////////////////////////////////////
-
-
+                // This doesn't count login failures towards account lockout
+                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+               
                 if (result.Succeeded)
 				{
-					//var student = _context.Students.Select(s => s.UserIdentity.UserName);
-					var loggedUser = Input.Email;
+                    var xlogging = new OneDeviceLogin
+                    {
+                        userName = Input.Email
+                    };
+                    await _context.OneDeviceLogin.AddAsync(xlogging);
+                    await _context.SaveChangesAsync();
+                    //var student = _context.Students.Select(s => s.UserIdentity.UserName);
+                    var loggedUser = Input.Email;
 					var userId = await _context.Students.Where(m => m.IdentityUser.Email == loggedUser).Select(g => g.IdentityUserId).FirstOrDefaultAsync();
 					var roleName = await _context.UserRoles.Where(r => r.UserId == userId).Select(r => r.RoleId).FirstOrDefaultAsync();
 

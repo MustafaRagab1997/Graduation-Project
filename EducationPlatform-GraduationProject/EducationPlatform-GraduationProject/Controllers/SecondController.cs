@@ -90,8 +90,8 @@ namespace EducationPlatform_GraduationProject.Controllers
                 HttpResponseMessage res = client.DeleteAsync($"{Baseurl}api/Contents/" + id).Result;
                 if (res.IsSuccessStatusCode)
                 {
-                    ViewBag.msg = "Deleted successfully";
-                    return RedirectToAction("Index", "First");
+					TempData["DeletedContent"] = "تم حذف المحتوى بنجاح";
+					return RedirectToAction("Index", "Second");
                 }
                 else
                 {
@@ -114,7 +114,8 @@ namespace EducationPlatform_GraduationProject.Controllers
                 await Client.PostAsJsonAsync($"{Baseurl}api/Contents/CreateNewContent", content);
             if (Response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+				TempData["CreateContent"] = "تم إضافة المحتوى بنجاح";
+				return RedirectToAction("Index" , "Second");
             }
             else
             {
@@ -150,11 +151,12 @@ namespace EducationPlatform_GraduationProject.Controllers
                 HttpResponseMessage res = client.PutAsJsonAsync("http://localhost:5295/api/Contents/NewUpdateContent", contentWithDetails).Result;
                 if (res.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index", "Home");
+					TempData["UpdateContent"] = "تم تعديل المحتوى بنجاح";
+					return RedirectToAction("Index", "Second");
                 }
                 else
                 {
-                    return RedirectToAction("Privacy", "Home");
+                    return View();
                 }
             }
         }

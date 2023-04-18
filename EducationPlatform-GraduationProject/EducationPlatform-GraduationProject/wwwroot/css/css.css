@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 
 body {
-  font-family: "Amiri", serif;
-  background-image:url('../Images/img1.jpg');
-  background-repeat: no-repeat;
-  background-attachment: scroll; 
-  background-size: cover;
+    font-family: "Amiri", serif;
+    background-image: url('../Images/img1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
 }
 
 .get-in-touch {

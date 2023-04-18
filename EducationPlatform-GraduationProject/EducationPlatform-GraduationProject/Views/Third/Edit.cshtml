@@ -1,111 +1,141 @@
 ﻿@model EducationPlatform_GraduationProject.ViewModels.ContentWithDetails
-
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Update Content";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section Head
+{        
+    <title>إضافـــة محتــوي جديد</title>
+    <style>
+        body {
+            background-image: url(../../Images/backg.jpg);
+        }
 
-<h1>Edit</h1>
+        input {
+            border: 1px solid black !important;
+        }
+    </style>
+}
 
-<h4>ContentWithDetails</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" asp-controller="Third">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group" style="display:none">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group" style="display:none">
-                <label asp-for="ClassIdfk" class="control-label"></label>
-                <input asp-for="ClassIdfk" class="form-control"/>
-                <span asp-validation-for="ClassIdfk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label">الاسم</label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label">التاريخ</label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ClassName" class="control-label">الصف الدراسي</label>
-                <input asp-for="ClassName" class="form-control" readonly  />
-                <span asp-validation-for="ClassName" class="text-danger"></span>
-            </div>
+<div class="d-flex align-items-center justify-content-center my-4">
+    <h4 class="text-primary" style="font-size: 5rem;
+        text-transform: uppercase;
+        font-family: 'Gambetta', serif;
+        letter-spacing: -3px;
+        transition: 700ms ease;
+        font-variation-settings: 'wght' 311;
+        margin-bottom: 0.8rem;
+        text-align: center;">
+        إضافة محتوي جديد
+    </h4>
+</div>
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="row bg-light  d-flex align-items-center justify-content-center w-50 border border-3 border-primary rounded rounded-5 ">
+        <div class="col-md-10">
+            <form asp-controller="Third" asp-action="Edit">
+                
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group" style="display:none">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:none">
+                    <label asp-for="ClassIdfk" class="control-label"></label>
+                    <input asp-for="ClassIdfk" class="form-control" />
+                    <span asp-validation-for="ClassIdfk" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">الاسم</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label">التاريخ</label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ClassName" class="control-label">الصف الدراسي</label>
+                    <input asp-for="ClassName" class="form-control" readonly />
+                    <span asp-validation-for="ClassName" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">                
                 <div class="form-group" id="Images">
                     <div>
-                        <label asp-for="Images" class="control-label  mt-3 mb-2 text-primary w-100">
-                            <span style="float: right;">الصور</span>
+                        <label asp-for="Images" class="control-label  mt-3 mb-2 mb-2 text-primary w-75 ">
+                            <span style="float: right; font-weight: bold;">إضافة صورة </span>
                         </label>
-                        <button type="button" id="BtnAddImages" class="btn btn-primary" style="width: 8%; float: left;"
-                                onclick="AddImages()">+</button>
-                        <button type="button" id="imgsbtn" onclick="removeimg()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;">-</button>
+                        <button type="button" id="imagebtn" onclick="removeImage()" disabled class="btn btn-danger mt-2"
+                                style="width: 10%; float: left;">
+                            -
+                        </button>
+                        <button type="button" id="BtnAddImage" class="btn btn-primary mt-2"
+                                style="width: 10%; float: left; margin-left: 1rem;" onclick="AddImages()">
+                            +
+                        </button>
                     </div>
-                    <span id="ImgsCount" data-value="@Model.Images.Count()"></span>
-                    @for (int i = 0; i < Model.Images.Count(); i++)
-                    {
-                        <input asp-for="Images[i]" class="form-control"
-                           style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الصورة"/>
-                        <span asp-validation-for="Images" class="text-danger"></span>
-                    }
+                    <input asp-for="Images[0]" class="form-control"
+                           style="float: right; width: 100%; text-align: right;" placeholder="ادخل رابط الصورة " />
+                    <span asp-validation-for="Images" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-group">
+
                 <div class="form-group" id="Videos">
                     <div>
-                        <label asp-for="Videos" class="control-label  mt-3 mb-2 text-primary w-100">
-                            <span style="float: right;">الفيديوهات</span></label>
-                        <button type="button" id="BtnAddVideo" class="btn btn-primary" style="width: 8%; float: left;"
-                                onclick="AddVideo()">+</button>
-                        <button type="button" id="videobtn" onclick="removevideo()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;">-</button>
+                        <label asp-for="Videos" class="control-label  mt-3 mb-2 mb-2 text-primary w-75">
+                            <span style="float: right; font-weight: bold;">إضافة فيديو</span>
+                        </label>
+
+                        <button type="button" id="videobtn" onclick="removeVideo()" disabled class="btn btn-danger mt-2"
+                                style="width: 10%; float: left;">
+                            -
+                        </button>
+                        <button type="button" id="BtnAddVideo" class="btn btn-primary mt-2"
+                                style="width: 10%; float: left; margin-left: 1rem;" onclick="AddVideo()">
+                            +
+                        </button>
                     </div>
-                    <span id="VideosCount" data-value="@Model.Videos.Count()"></span>
-                    @for (int i = 0; i < Model.Videos.Count(); i++)
-                    {
-                        <input asp-for="Videos[i]" class="form-control"
-                           style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الفيديو"/>
-                        <span asp-validation-for="Videos" class="text-danger"></span>
-                    }
+                    <input asp-for="Videos[0]" class="form-control"
+                           style="float: right; width: 100%; text-align: right;" placeholder="ادخل رابط الفيديو " />
+                    <span asp-validation-for="Videos" class="text-danger"></span>
                 </div>
-            </div> 
-           <div class="form-group">
+
                 <div class="form-group" id="PDFs">
                     <div>
-                        <label asp-for="Pdfs" class="control-label  mt-3 mb-2 text-primary w-100">
-                            <span style="float: right;">اضافة ملف</span>
+                        <label asp-for="Pdfs" class="control-label  mt-3 mb-2 text-primary w-75">
+                            <span style="float: right; font-weight: bold;">إضافة ملف</span>
                         </label>
-                        <button type="button" id="BtnAddPDF" class="btn btn-primary" style="width: 8%; float: left;"
-                                onclick="AddPDF()">+</button>
-                        <button type="button" id="pdfbtn" onclick="removepdf()" class="btn btn-danger" style="width: 8%; float: left; margin-top: 10px;"> - </button>
-                    </div>
-                    <span id="PDFCount" data-value="@Model.Pdfs.Count()"  ></span>
-                    @for(int i = 0 ; i<Model.Pdfs.Count();i++)                    
-                    {
-                        <input asp-for="Pdfs[i]" class="form-control"
-                               style="float: right; width: 90%; text-align: right;" placeholder="ادخل رابط الملف  " />
-                        <span asp-validation-for="Pdfs" class="text-danger"></span>
-                    }
-                </div>                
-           </div> 
+                        <button type="button" id="PDFbtn" onclick="removePDF()" disabled class="btn btn-danger mt-2"
+                                style="width: 10%; float: left;">
+                            -
+                        </button>
+                        <button type="button" id="BtnAddPDF" class="btn btn-primary mt-2"
+                                style="width: 10%; float: left; margin-left: 1rem;" onclick="AddPDF()">
+                            +
+                        </button>
 
-            <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-primary" />
-            </div>
-        </form>
+
+                    </div>
+                    <input asp-for="Pdfs[0]" class="form-control"
+                           style="float: right; width: 100%; text-align: right;" placeholder="ادخل رابط الملف  " />
+                    <span asp-validation-for="Pdfs" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="تعديـــــــــــــــــل" class="btn btn-primary w-100 mt-3 mb-2 fw-bold" />                    
+                </div>
+            </form>
+            <a type="button" asp-action="Index" asp-controller="Third" class="btn btn-primary w-100 mt-3 mb-2 fw-bold">رجــــــــــــــــــوع</a>
+        </div>
     </div>
 </div>
-<div>
-    <a asp-action="Index" asp-controller="Third">Back to List</a>
-</div>
+
 @section Scripts
 {
-    <script src="~/js/contentjs.js"></script>
+    <script src="~/js/addContent.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
 }

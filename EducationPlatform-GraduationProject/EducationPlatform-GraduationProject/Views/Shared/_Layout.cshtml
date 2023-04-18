@@ -16,11 +16,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">    *@
 	@RenderSection("Head", required: false)
 </head>
-<body>
-    ‏
+<body>  
 
-    <header>
-		@*new nav bar *@
+    <header>		
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 nav-Edited" style="direction:rtl !important;background-color: #333 !important; top: 0 !important;width: 100% !important;z-index: 100 !important; position: fixed !important;">
 			<div class="container">
 				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
@@ -32,15 +30,13 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-menu-button-wide" viewBox="0 0 16 16">
 						<path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13z" />
 						<path d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
-					</svg>
-					@*<span class="navbar-toggler-icon">  </span>*@
+					</svg>					
 				</button>
 
 				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="float:left">
 					<ul class="navbar-nav flex-grow-1" style="flex-direction:row-reverse !important">
 						@if (User.IsInRole("Admin"))
 						{
-
 							<li class="nav-item mx-2">
 								<a class="nav-link Nav-Links" style="color:white !important; font-size:1.2rem !important;" asp-area="" asp-controller="First" asp-action="Index">الصف الأول</a>
 							</li>
@@ -49,10 +45,7 @@
 							</li>
 							<li class="nav-item mx-2">
 								<a class ="nav-link Nav-Links" style="color:white !important; font-size:1.2rem !important;" asp-area="" asp-controller="Third" asp-action="Index">الصف الثالث</a>
-							</li>
-							<li class="nav-item mx-2">
-								<a class="nav-link Nav-Links" style="color:white !important; font-size:1.2rem !important;" asp-area="Identity" asp-page="/Account/Register">إضافة طالب</a>
-							</li>
+							</li>							
 						}
 						else if (User.IsInRole("Student"))
 						{
@@ -73,59 +66,9 @@
             @RenderBody()
         </main>
     </div>
-
-   @* <footer class="border-top footer text-muted" style="padding:0 !important">
-		<!-- Copyright Section Start -->
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="d-flex justify-content-center">
-							<p>
-								<i class="far fa-copyright"></i>2023 ITI All Rights Reserved. Design By <a href="#">
-									Our Team
-								</a>
-								<ul style="display: flex; justify-content: flex-start;">
-									<li> &nbsp; &nbsp; Asmaa Hany &nbsp; &nbsp;</li>
-
-									<li> & &nbsp; &nbsp; Mohamed Salah &nbsp; &nbsp; </li>
-
-									<li> & &nbsp; &nbsp; Mostafa Ragab &nbsp; &nbsp; </li>
-
-									<li> & &nbsp; &nbsp; Mohamed Hamdeen &nbsp; &nbsp; </li>
-
-									<li> & &nbsp; &nbsp; Kareem Naser</li>
-								</ul>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Copyright Section End -->
-    </footer>*@
-
-	<footer class="footer border-top text-light" style=" position: relative !important;padding: 0 !important;bottom: 0 !important;top: 0 !important;margin-bottom: -4rem !important;width: 100% !important;background-color: #333 !important;white-space: nowrap !important;line-height: 60px !important;">
-	<div class="container-fluid">
-		<p>			
-			<ul style="display: flex; justify-content: flex-start;">
-				<li> &nbsp; &nbsp; Asmaa Hany &nbsp; &nbsp;</li>
-
-				<li> & &nbsp; &nbsp; Mohamed Salah &nbsp; &nbsp; </li>
-
-				<li> & &nbsp; &nbsp; Mostafa Ragab &nbsp; &nbsp; </li>
-
-				<li> & &nbsp; &nbsp; Mohamed Hamdeen &nbsp; &nbsp; </li>
-
-				<li> & &nbsp; &nbsp; Kareem Naser</li>
-			</ul>
-		</p>
-	</div>
-</footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-	
+    <script src="~/js/site.js" asp-append-version="true"></script>	
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

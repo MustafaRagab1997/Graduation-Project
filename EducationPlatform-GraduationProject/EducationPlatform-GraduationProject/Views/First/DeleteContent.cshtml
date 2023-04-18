@@ -4,50 +4,55 @@
     ViewData["Title"] = "DeleteContent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section Head
+    {
+    <link rel="stylesheet" href="~/css/DeleteStu.css">
 
-<h1>DeleteContent</h1>
+}
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ContentVM</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClassIdfk)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClassIdfk)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ClassName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ClassName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
-        </dd>        
-    </dl>
-    
-    <form asp-action="DeleteContent">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" asp-controller="First">Back to List</a>
-    </form>
+<div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 1.5rem; transition: 0.3s; width: 40%; margin-right: 30%; margin-top: 7rem;background-color: white">
+    <div class="container" style="padding: 2px 16px;">
+        <h1 style="text-align: center; text-shadow: 2px 2px 2px rgb(211, 217, 221);color: #1e6899;">
+            هل أنت متأكد من حذف المحتوى؟
+        </h1>
+
+        <div class="StudentInfo">
+            <label style="font-weight:bold;">الصف الدراسي / </label>
+           
+                @if (Model.ClassName == "First")
+                {
+                    <label class="userInfo">الصف الأول الثانوي</label>
+                }
+                else if (Model.ClassName == "Second")
+                {
+                <label class="userInfo">الصف الثاني الثانوي</label>
+                }
+                else
+                {
+                    <label class="userInfo">الصف الثالث الثانوي</label>
+                }                
+                
+        </div>
+        <hr>
+
+        <div class="StudentInfo">
+            <label style="font-weight:bold;">اسم المحاضرة / </label>
+            <label class="userInfo">@Html.DisplayFor(model => model.Title)</label>
+        </div>
+        <hr>        
+        <div class="StudentInfo">
+            <label style="font-weight:bold;">تاريخ الإنشاء / </label>
+            <label class="userInfo">@Html.DisplayFor(model => model.Date)</label>
+        </div>
+        <hr>
+        <form asp-action="DeleteContent">
+            <input type="submit" value="حذف المحتوى" class="buttonClass" style="background-color:#cb3131" />
+            
+        </form>
+        <div class="bn40div">
+            <a class="buttonClass" asp-action="Index" asp-controller="First" style="background-color:#4e4ecf; color:white">الرجوع</a>
+        </div>
+    </div>
 </div>
 @{
     try
@@ -59,6 +64,6 @@
     }
     catch
     {
-        
+
     }
 }

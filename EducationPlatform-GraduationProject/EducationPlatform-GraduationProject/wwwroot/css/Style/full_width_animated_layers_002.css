@@ -1,43 +1,44 @@
 /*------------------------------------------------------*/
 /* FULL WIDTH ANIMATED LAYERS 002
 /*------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 #fw_al_002 {
   overflow: hidden;
   max-height: 658px;
   position: relative;
 }
-#fw_al_002 .lg {
-  padding: 0;
-  color: #fff;
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 42px;
-  display: inline-block;
-  text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
+    #fw_al_002 .lg {
+        padding: 0;
+        color: #fff;
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 42px;
+        display: inline-block;
+        text-transform: capitalize;
+        font-family: "Amiri", serif;
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
 .slider_content .lg {
-  padding: 0;
-  color: #5969dc !important;
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 42px;
-  display: inline-block;
-  text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 0;
+    color: #5969dc !important;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 42px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-family: "Amiri", serif;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 #fw_al_002:hover {
@@ -74,23 +75,23 @@
   width: 100%;
 }
 
-.slider_content_center > h1 {
-  padding: 0;
-  color: #5969dc;
-  font-size: 33px;
-  font-weight: 300;
-  line-height: 42px;
-  margin-top: 20px;
-  margin-bottom: 25px;
-  text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
+    .slider_content_center > h1 {
+        padding: 0;
+        color: #5969dc;
+        font-size: 33px;
+        font-weight: 300;
+        line-height: 42px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        text-transform: capitalize;
+        font-family: "Amiri", serif;
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
 .slider_content_center > h1 > span {
   padding: 0;
   color: white;
@@ -103,21 +104,21 @@
   -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
-.slider_content_center > p {
-  padding: 0;
-  color: white;
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: normal;
-  margin-bottom: 25px;
-  font-family: "Open Sans", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
+    .slider_content_center > p {
+        padding: 0;
+        color: white;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: normal;
+        margin-bottom: 25px;
+        font-family: "Amiri", serif;
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
 .slider_content_center > .btn-default {
   color: #5969dc;
@@ -153,22 +154,22 @@
   right: 0%;
 }
 .slider_content > h1 {
-  padding: 0;
-  color: #5969dc;
-  font-size: 33px;
-  font-weight: 300;
-  line-height: 42px;
-  margin-top: 20px;
-  margin-bottom: 25px;
-  display: inline-block;
-  text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 0;
+    color: #5969dc;
+    font-size: 33px;
+    font-weight: 300;
+    line-height: 42px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-family: "Amiri", serif;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slider_content > h1 > span {
   padding: 0;
@@ -183,45 +184,45 @@
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slider_content > p {
-  padding: 0;
-  color: white;
-  font-size: 17px;
-  line-height: 23px;
-  font-weight: normal;
-  margin-bottom: 25px;
-  font-family: "Open Sans", sans-serif;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 0;
+    color: white;
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: normal;
+    margin-bottom: 25px;
+    font-family: "Amiri", serif;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slider_content > a,
 .slider_content > a:visited {
-  padding: 4px 30px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 36px;
-  text-align: center;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  background: #5969dc;
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  -webkit-transition: background cubic-bezier(0.23, 1, 0.32, 1);
-  transition: background cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 4px 30px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    background: #5969dc;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Amiri", serif;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: background cubic-bezier(0.23, 1, 0.32, 1);
+    transition: background cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slider_content > a:hover,
 .slider_content > a:active {

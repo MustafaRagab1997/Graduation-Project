@@ -15,5 +15,7 @@ namespace EducationPlatform_GraduationProject.Models
         public DateTime? RegistedDate { get; set; }
         [NotMapped]
         public int ClassID { get; set; }
-    }
+		[NotMapped]
+		public string Password { get; set; }
+	}
 }

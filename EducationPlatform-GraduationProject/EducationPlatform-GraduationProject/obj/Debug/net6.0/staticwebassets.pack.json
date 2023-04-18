@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets\\Home\\mr2edited.jpg"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\33.jpg",
+      "PackagePath": "staticwebassets\\Images\\33.jpg"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\backg.jpg",
+      "PackagePath": "staticwebassets\\Images\\backg.jpg"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\Images\\background.jpg",
       "PackagePath": "staticwebassets\\Images\\background.jpg"
     },
@@ -253,6 +261,10 @@
       "PackagePath": "staticwebassets\\css\\AccessDenied_css.css"
     },
     {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\DeleteStu.css",
+      "PackagePath": "staticwebassets\\css\\DeleteStu.css"
+    },
+    {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\Style\\MainImportant.css",
       "PackagePath": "staticwebassets\\css\\Style\\MainImportant.css"
     },
@@ -295,6 +307,10 @@
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\getallstudents.css",
       "PackagePath": "staticwebassets\\css\\getallstudents.css"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\new.css",
+      "PackagePath": "staticwebassets\\css\\new.css"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\css\\site.css",
@@ -619,6 +635,10 @@
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\contentjs.js",
       "PackagePath": "staticwebassets\\js\\contentjs.js"
+    },
+    {
+      "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
       "Id": "D:\\المشروع\\EducationPlatform-GraduationProject\\EducationPlatform-GraduationProject\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",

@@ -17,10 +17,11 @@ namespace EducationPlatform_GraduationProject.Models
 
         public DateTime? RegistedDate { get; set; }
 
-        //public bool PaymentState { get; set; }
+		public string StPassword { get; set; }
+		//public bool PaymentState { get; set; }
 
-        //public bool Available { get; set; }
-        public Class Class { get; set; }
+		//public bool Available { get; set; }
+		public Class Class { get; set; }
         [ForeignKey("Class") , ]
         public int ClassID { get; set; }
         public ICollection<Messages> Messages { get; set; }

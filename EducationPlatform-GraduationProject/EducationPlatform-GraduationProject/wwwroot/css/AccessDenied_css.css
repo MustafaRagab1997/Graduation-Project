@@ -1,5 +1,8 @@
-﻿body {
+﻿@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+
+body {
     background-color: #1c2127;
+    font-family: " Amiri", serif;
 }
 
 .parent {

@@ -31,7 +31,7 @@ namespace EducationPlatform_GraduationProject.Controllers
                 {
                     students = _context.Students.Where(x => x.ClassID == id).ToList();
                 }
-                // ارجع لصفحة الخطأ
+                //ارجع لصفحة الخطأ
 
             }
             return View(students);
@@ -66,6 +66,7 @@ namespace EducationPlatform_GraduationProject.Controllers
                 st.Phone = student.Phone;
                 st.IdentityUserId = student.IdentityUserId;
                 _context.SaveChanges();
+                TempData["UpdateStudent"] = "تم تعديل بيانات الطالب بنجاح";
                 return RedirectToAction("GetAllStudent", new { id = student.ClassID });
             }
             return View();
@@ -99,6 +100,7 @@ namespace EducationPlatform_GraduationProject.Controllers
                     _context.SaveChanges();
                     _context.Students.Remove(student);
                     _context.SaveChanges();
+                    TempData["DeleteStudent"] = "تم حذف الطالب بنجاح";
                     return RedirectToAction("GetAllStudent", new { id = student.ClassID });
                 }
             }

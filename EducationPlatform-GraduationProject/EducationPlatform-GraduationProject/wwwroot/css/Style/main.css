@@ -35,16 +35,18 @@
    1. IMPORT GOOGLE FONTS
    ========================================================================== */
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 /* ==========================================================================
    2. GENERAL
    ========================================================================== */
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  font-size: 14px;
-  font-weight: 400;
-  background: #fff;
-  overflow-x: hidden;
+    
+    font-family: "Amiri", serif;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    background: #fff;
+    overflow-x: hidden;
 }
 
 html {

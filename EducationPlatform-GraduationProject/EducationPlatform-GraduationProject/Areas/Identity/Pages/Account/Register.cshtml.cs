@@ -23,8 +23,8 @@ using Microsoft.Extensions.Logging;
 
 namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
 {
-	[Authorize(Roles = "Admin")]
-	public class RegisterModel : PageModel
+    [Authorize(Roles = "Admin")]
+    public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -42,10 +42,10 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
             ApplicationDbContext context
             //IUserStore<ApplicationUser> userStore,
             )
-            //ILogger<RegisterModel> logger,
-            //IEmailSender emailSender)
+        //ILogger<RegisterModel> logger,
+        //IEmailSender emailSender)
         {
-            _userManager = userManager;            
+            _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
             _roleManager = roleManager;
@@ -101,13 +101,13 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
             [StringLength(100, ErrorMessage = "عنوان الطالب يجب ألا يزيد عن 100 حرف و ألا يقل عن 3 حروف", MinimumLength = 5)]
             [Display(Name = "عنوان الطالب")]
             public string Address { get; set; }
-            
-            [Required]
+
+            [Required(ErrorMessage = "اختر الصف الدراسي")]
             [DataType(DataType.Date)]
             [Display(Name = "تاريخ التسجيل")]
-            public DateTime RegistedDate { get; set; } 
-                
-            [Required]            
+            public DateTime RegistedDate { get; set; }
+
+            [Required (ErrorMessage = "اختر الصف الدراسي") ]
             [Display(Name = "الصف الدراسي")]
             public int ClassID { get; set; }
 
@@ -121,7 +121,7 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "كلمة السر يجب أن تكون اطول من 7 حروف و أن تحتوي علي أرقام وحروف كبيرة و صغيرة و علامات")]
             [DataType(DataType.Password)]
             [Display(Name = "كلمة المرور")]
             public string Password { get; set; }
@@ -132,7 +132,7 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "تأكيد كلمة المرور")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "كلمة المرور غير متاطبقة")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -141,7 +141,7 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            
+
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -166,15 +166,16 @@ namespace EducationPlatform_GraduationProject.Areas.Identity.Pages.Account
                     result = await _userManager.AddToRoleAsync(user, "Student");
                     if (result.Succeeded)
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        //await _signInManager.SignInAsync(user, isPersistent: false);
                         Student newstudent = new Student()
                         {
                             StName = Input.StudentName,
-                            Address= Input.Address,
+                            Address = Input.Address,
                             ClassID = Input.ClassID,
                             Phone = Input.Phone,
                             RegistedDate = Input.RegistedDate,
-                            IdentityUserId = user.Id,                            
+                            IdentityUserId = user.Id,
+                            StPassword = Input.Password,
                         };
                         _context.Students.Add(newstudent);
                         _context.SaveChanges();
